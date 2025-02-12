@@ -1,15 +1,14 @@
 const express = require('express')
-const userrouter = require('./router/users')
 const app = express()
-const port = 3000
+const userrouter = require('./router/users')
 const connectDB = require('./config/db')
+const port = 3000
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-
 app.get('/', (req, res) => {
-  res.send('hai, namaku afra')
+  res.send('Aku senang dan bahagia selalu dan aku ingin jadi orang sukses')
 })
 
 app.use(userrouter)
@@ -17,5 +16,5 @@ app.use(userrouter)
 connectDB()
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log('Example app listening on port ${port}')
 })
